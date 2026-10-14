@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Custodia · Compliance y Protección de Datos</title>
+<meta name="description" content="Consultora especializada en programas de integridad (Ley 27.401) y protección de datos personales (Ley 25.326). La Rioja, Argentina.">
+<meta name="theme-color" content="#14231f">
+<meta property="og:title" content="Custodia · Compliance y Protección de Datos">
+<meta property="og:description" content="Programas de integridad y protección de datos personales para organizaciones públicas y privadas.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23173b35'/%3E%3Cpath d='M16 6l8 3v6c0 5-3.4 9-8 11-4.6-2-8-6-8-11V9z' fill='none' stroke='%23c9a978' stroke-width='1.8'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Custodia",
+  "description": "Consultora de compliance, programas de integridad y protección de datos personales.",
+  "email": "consultoracustodia@gmail.com",
+  "areaServed": "AR",
+  "knowsAbout": ["Ley 27.401", "Programa de Integridad", "Ley 25.326", "Protección de datos personales", "Gobernanza de inteligencia artificial"]
+}
+</script>
+<style>
+/* Layout: expediente jurídico — columna principal con notas al margen; secciones numeradas como articulado (§) */
+:root{
+  --paper:#f6f7f4;
+  --sheet:#ffffff;
+  --ink:#16201e;
+  --muted:#59645f;
+  --line:#d9ddd6;
+  --accent:#1d5a4e;
+  --accent-soft:#e3ece8;
+  --seal:#9b7a48;
+  --band:#14231f;
+  --band-fg:#eef1ec;
+  --band-muted:#a9b5af;
+  --band-line:#2b3c37;
+
+  --f-display:"Newsreader", "Iowan Old Style", Georgia, serif;
+  --f-body:"Instrument Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  --step--1:.8125rem; --step-0:1rem; --step-1:1.1875rem; --step-2:1.5rem;
+  --step-3:2.125rem; --step-4:clamp(2.4rem, 1.6rem + 3.4vw, 4.25rem);
+  --gutter:clamp(16px, 4vw, 40px);
+  --max:1160px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#111917; --sheet:#17211e; --ink:#e7ebe6; --muted:#9daaa4; --line:#2a3733;
+    --accent:#7fbfae; --accent-soft:#1c2e29; --seal:#c9a978;
+    --band:#0b1210; --band-fg:#eef1ec; --band-muted:#9daaa4; --band-line:#22312c;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#111917; --sheet:#17211e; --ink:#e7ebe6; --muted:#9daaa4; --line:#2a3733;
+  --accent:#7fbfae; --accent-soft:#1c2e29; --seal:#c9a978;
+  --band:#0b1210; --band-fg:#eef1ec; --band-muted:#9daaa4; --band-line:#22312c;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0px)}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1.08;letter-spacing:-.01em;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px;border-radius:2px}
+[hidden]{display:none!important}
+
+.skip{position:absolute;left:-9999px;top:8px;z-index:20;background:var(--sheet);color:var(--ink);padding:10px 16px}
+.skip:focus{left:8px}
+
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+.label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.label .sec{color:var(--seal);margin-right:.5em}
+
+.quiet-link{display:inline-flex;align-items:center;gap:.55em;font-weight:500;text-decoration:none;color:var(--accent);min-height:44px;
+  background:linear-gradient(currentColor,currentColor) 0 calc(100% - 8px)/100% 1px no-repeat;transition:background-size .3s ease, gap .3s ease}
+.quiet-link:hover{gap:.85em}
+.quiet-link .arr{transition:transform .3s ease}
+.quiet-link:hover .arr{transform:translateX(2px)}
+
+/* ——— Cabecera ——— */
+.top{position:sticky;top:0;z-index:10;padding-top:env(safe-area-inset-top,0px);background:color-mix(in srgb, var(--band) 94%, transparent);backdrop-filter:blur(8px);color:var(--band-fg);border-bottom:1px solid var(--band-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-size:1.45rem;letter-spacing:.01em;min-height:44px}
+.brand svg{width:22px;height:22px;flex:none}
+.nav{display:flex;gap:28px;font-size:.9rem;align-items:center}
+.nav a{text-decoration:none;color:var(--band-muted);transition:color .2s;padding-block:12px}
+.nav a:hover{color:var(--band-fg)}
+.nav a.nav-contact{color:var(--band-fg);border-bottom:1px solid var(--seal);padding-block:10px 4px}
+@media (max-width:720px){.nav a:not(.nav-contact){display:none}}
+
+/* ——— Hero ——— */
+.hero{background:var(--band);color:var(--band-fg);padding-block:clamp(56px,9vw,112px) clamp(56px,8vw,96px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(40px,6vw,88px);align-items:end}
+.hero .label{color:#8fc7b8}
+.hero h1{font-size:var(--step-4);margin-top:22px}
+.hero h1 em{font-style:italic;color:#c9a978}
+.hero .lede{margin-top:28px;max-width:58ch;color:var(--band-muted);font-size:var(--step-1);line-height:1.6}
+.hero .actions{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center}
+.hero .quiet-link{color:var(--band-fg)}
+.hero .quiet-link.secondary{color:var(--band-muted);background-size:0 1px}
+.hero .quiet-link.secondary:hover{background-size:100% 1px}
+
+.marco{border-top:1px solid var(--band-line)}
+.marco .label{display:block;padding-block:16px;color:var(--band-muted)}
+.marco dl{margin:0}
+.marco .row{display:grid;grid-template-columns:7.5rem minmax(0,1fr);gap:18px;padding-block:18px;border-top:1px solid var(--band-line)}
+.marco dt{font-family:var(--f-mono);font-size:.85rem;color:#c9a978;line-height:1.5}
+.marco dt small{display:block;color:var(--band-muted);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.marco dd{margin:0;color:var(--band-fg);font-size:.95rem;line-height:1.5}
+
+/* ——— Secciones ——— */
+section{padding-block:clamp(72px,10vw,128px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(24px,5vw,72px);align-items:start}
+.sec-head h2{font-size:var(--step-3);margin-top:14px}
+@media (min-width:900px){.sec-head h2{font-size:2.6rem}}
+
+/* Nosotros */
+.about-body{display:grid;gap:20px;color:var(--muted);font-size:var(--step-1);max-width:62ch}
+.about-body p:first-child{color:var(--ink)}
+.creds{margin-top:44px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.cred{padding:22px 24px 0 0}
+.cred + .cred{padding-left:24px;border-left:1px solid var(--line)}
+.cred h3{font-family:var(--f-body);font-weight:600;font-size:var(--step-0);letter-spacing:0}
+.cred p{color:var(--muted);font-size:.93rem;margin-top:6px}
+.cred .tag{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.1em;color:var(--seal);text-transform:uppercase;display:block;margin-bottom:8px}
+
+/* Servicios */
+#servicios{background:var(--sheet);border-block:1px solid var(--line)}
+.sec-head .intro{color:var(--muted);max-width:56ch;margin-top:18px}
+.services{margin-top:clamp(48px,6vw,72px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
+.svc{padding:32px 28px 36px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-width:0}
+.svc:not(.main):not(:nth-child(3n+2)){padding-left:28px;border-left:1px solid var(--line)}
+.svc:last-child{grid-column:span 2}
+.svc:last-child p{max-width:60ch}
+.svc .num{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);letter-spacing:.08em}
+.svc h3{font-size:var(--step-2);line-height:1.15}
+.svc p{color:var(--muted);font-size:.95rem}
+.svc.main{grid-column:1 / -1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(24px,5vw,72px);padding:40px 0;border-bottom:1px solid var(--ink)}
+.svc.main h3{font-size:var(--step-3)}
+.svc.main .num{color:var(--seal)}
+.svc.main p{font-size:var(--step-1);color:var(--ink)}
+.svc.main .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:18px;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.svc.main .meta b{color:var(--accent);font-weight:500}
+.svc.main .body{display:flex;flex-direction:column;gap:6px}
+
+/* Proceso */
+.steps{margin-top:clamp(48px,6vw,72px);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(20px,3vw,40px);list-style:none;padding:0}
+.step{border-top:1px solid var(--ink);padding-top:22px;position:relative;min-width:0}
+.step::before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--seal)}
+.step .num{font-family:var(--f-display);font-size:2.6rem;line-height:1;color:var(--accent)}
+.step h3{font-family:var(--f-body);font-size:var(--step-1);font-weight:600;margin-top:16px;letter-spacing:0}
+.step p{color:var(--muted);font-size:.95rem;margin-top:8px}
+
+/* Valor */
+.value{background:var(--band);color:var(--band-fg);padding-block:clamp(64px,9vw,104px)}
+.value .wrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:clamp(32px,6vw,80px);align-items:end}
+.value blockquote{margin:0;font-family:var(--f-display);font-size:clamp(1.75rem,1.2rem + 2vw,2.75rem);line-height:1.18;text-wrap:balance}
+.value blockquote em{color:#c9a978}
+.value .side{display:grid;gap:22px;color:var(--band-muted)}
+.value .quiet-link{color:var(--band-fg);justify-self:start}
+.value ul{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:.95rem}
+.value li{display:grid;grid-template-columns:1.2rem minmax(0,1fr);gap:8px}
+.value li::before{content:"§";color:#c9a978;font-family:var(--f-display)}
+
+/* Contacto */
+.contact{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:clamp(32px,5vw,72px)}
+.contact h2{font-size:var(--step-3);margin-top:14px}
+.contact .intro{color:var(--muted);margin-top:18px;max-width:40ch}
+.mail-card{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);display:grid;gap:10px}
+.mail-card .k{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.mail-card .mail{font-family:var(--f-display);font-size:clamp(1.25rem,1rem + 1vw,1.6rem);color:var(--accent);text-decoration:none;overflow-wrap:anywhere;border-bottom:1px solid var(--line);justify-self:start;padding-bottom:2px}
+.mail-card .mail:hover{border-color:var(--accent)}
+.mail-card .copy{justify-self:start;margin-top:6px;font-size:.85rem;padding:10px 16px;min-height:44px}
+.mail-card .copied{font-size:.85rem;color:var(--accent)}
+
+form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 24px;background:var(--sheet);border:1px solid var(--line);padding:clamp(22px,3.5vw,40px)}
+.field{display:grid;gap:8px;min-width:0}
+.field.full{grid-column:1 / -1}
+.field label{font-size:.8rem;font-weight:500;color:var(--muted);letter-spacing:.02em}
+.field label .req{color:var(--seal)}
+input,select,textarea{font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line);padding:10px 0;border-radius:0;width:100%;transition:border-color .2s}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 10px) 55%,calc(100% - 5px) 55%;background-size:5px 5px;background-repeat:no-repeat;padding-right:24px}
+select option{background:var(--sheet);color:var(--ink)}
+textarea{resize:vertical;min-height:110px}
+input:focus,select:focus,textarea:focus{outline:none;border-bottom-color:var(--accent)}
+input[aria-invalid="true"]{border-bottom-color:#b4442f}
+.form-foot{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:8px}
+.form-foot small{color:var(--muted);font-size:.8rem;max-width:44ch}
+button{font:inherit;font-weight:500;cursor:pointer;color:var(--ink);background:transparent;border:1px solid var(--ink);padding:12px 22px;min-height:44px;display:inline-flex;gap:.6em;align-items:center;transition:background .2s,color .2s}
+button:hover{background:var(--ink);color:var(--paper)}
+.status{grid-column:1 / -1;font-size:.9rem;color:var(--accent)}
+
+/* Pie */
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:.85rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer .brandline{font-family:var(--f-display);font-size:1.05rem;color:var(--ink)}
+footer a{text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{border-color:var(--accent);color:var(--accent)}
+
+@media (max-width:900px){
+  .hero .wrap,.sec-head,.value .wrap,.contact,.svc.main{grid-template-columns:minmax(0,1fr)}
+  .services{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .svc:not(.main):not(:nth-child(3n+2)){padding-left:0;border-left:0}
+  .svc:not(.main):nth-child(odd){padding-left:24px;border-left:1px solid var(--line)}
+  .svc{padding-right:24px}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:40px}
+}
+@media (max-width:600px){
+  .services,.steps,.creds,form{grid-template-columns:minmax(0,1fr)}
+  .svc:last-child{grid-column:auto}
+  .svc:not(.main):nth-child(odd){padding-left:0;border-left:0}
+  .svc{padding-right:0}
+  .cred + .cred{padding-left:0;border-left:0}
+  .marco .row{grid-template-columns:5.5rem minmax(0,1fr)}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Custodia, inicio">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.5l7.5 2.8v5.6c0 4.7-3.2 8.6-7.5 10.6-4.3-2-7.5-5.9-7.5-10.6V5.3z" stroke="#c9a978" stroke-width="1.4"/><path d="M8.6 12.2l2.3 2.3 4.5-4.6" stroke="#c9a978" stroke-width="1.4"/></svg>
+      Custodia
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Cómo trabajamos</a>
+      <a href="#contacto" class="nav-contact">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <div class="hero" id="contenido">
+    <div class="wrap">
+      <div>
+        <span class="label">Compliance · Integridad · Protección de datos</span>
+        <h1>Integridad que se diseña. <em>Datos que se protegen.</em></h1>
+        <p class="lede">Somos una consultora especializada en programas de integridad y protección de datos personales. Acompañamos a organizaciones públicas y privadas a cumplir la Ley 27.401, la Ley 25.326 y los Lineamientos de la Oficina Anticorrupción, con herramientas que quedan instaladas en su propia estructura.</p>
+        <div class="actions">
+          <a class="quiet-link" href="#contacto">Coordinar una reunión <span class="arr" aria-hidden="true">→</span></a>
+          <a class="quiet-link secondary" href="#servicios">Ver servicios</a>
+        </div>
+      </div>
+      <aside class="marco" aria-label="Marco normativo de trabajo">
+        <span class="label">Marco normativo de trabajo</span>
+        <dl>
+          <div class="row"><dt><small>Ley</small>27.401</dt><dd>Responsabilidad penal de las personas jurídicas y Programa de Integridad.</dd></div>
+          <div class="row"><dt><small>Ley</small>25.326</dt><dd>Protección de los datos personales y obligaciones ante la AAIP.</dd></div>
+          <div class="row"><dt><small>Oficina</small>Anticorrupción</dt><dd>Lineamientos para la implementación de programas de integridad.</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <section id="nosotros">
+    <div class="wrap sec-head">
+      <div>
+        <span class="label"><span class="sec">§ 1</span>Quiénes somos</span>
+        <h2>Un equipo jurídico y tecnológico al servicio de la integridad.</h2>
+      </div>
+      <div>
+        <div class="about-body">
+          <p>Custodia nace de la convergencia entre el derecho, el compliance y la tecnología. Reunimos experiencia en asesoramiento jurídico, control público e inteligencia artificial para traducir las exigencias normativas en políticas, procedimientos y capacitaciones concretas.</p>
+          <p>Nuestro objetivo no es generar dependencia: diseñamos cada programa para que la organización pueda sostenerlo por sí misma una vez finalizado nuestro acompañamiento.</p>
+        </div>
+        <div class="creds">
+          <div class="cred">
+            <span class="tag">ICCP</span>
+            <h3>Certificación internacional</h3>
+            <p>Profesionales con certificación internacional ICCP en Ética y Compliance.</p>
+          </div>
+          <div class="cred">
+            <span class="tag">Público · Privado</span>
+            <h3>Mirada pública y privada</h3>
+            <p>Experiencia en organismos de control y en la práctica privada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="servicios">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label"><span class="sec">§ 2</span>Servicios</span>
+          <h2>Soluciones de cumplimiento a la medida de cada organización.</h2>
+        </div>
+        <p class="intro">Trabajamos con cooperativas, sociedades anónimas unipersonales, SAPEM, sociedades del Estado y empresas privadas de todo tamaño.</p>
+      </div>
+
+      <div class="services">
+        <article class="svc main">
+          <div>
+            <span class="num">01 · Servicio principal</span>
+            <h3>Programa de Integridad</h3>
+          </div>
+          <div class="body">
+            <p>Diseño e implementación del Programa de Integridad previsto en la Ley 27.401, alineado con los Lineamientos de la Oficina Anticorrupción. Un plan de cuatro a seis meses que deja la estructura documental y los parámetros instalados.</p>
+            <div class="meta"><span><b>Plazo</b> 4 a 6 meses</span><span><b>Marco</b> Ley 27.401 · Lineamientos OA</span></div>
+          </div>
+        </article>
+        <article class="svc">
+          <span class="num">02</span>
+          <h3>Código de Ética y políticas</h3>
+          <p>Redacción del Código de Ética y Conducta, políticas de regalos y conflictos de interés, interacción con el sector público y procedimientos internos adaptados a la realidad de cada organización.</p>
+        </article>
+        <article class="svc">
+          <span class="num">03</span>
+          <h3>Capacitación y cultura ética</h3>
+          <p>Formación para directorios, consejos de administración y personal, con contenidos prácticos que fortalecen la cultura de integridad y el compromiso de la alta dirección.</p>
+        </article>
+        <article class="svc">
+          <span class="num">04</span>
+          <h3>Protección de datos personales</h3>
+          <p>Adecuación a la Ley 25.326: relevamiento de bases de datos, políticas de privacidad, cláusulas de consentimiento, contratos con encargados de tratamiento y gestión de los derechos de los titulares.</p>
+        </article>
+        <article class="svc">
+          <span class="num">05</span>
+          <h3>Gobernanza de Inteligencia Artificial</h3>
+          <p>Políticas de uso responsable de IA, evaluación de riesgos en el tratamiento automatizado de datos y lineamientos para incorporar estas herramientas de manera ética y segura.</p>
+        </article>
+        <article class="svc">
+          <span class="num">06</span>
+          <h3>Diagnóstico y acompañamiento</h3>
+          <p>Diagnóstico inicial de riesgos y del estado de cumplimiento, y acompañamiento posterior para actualizar el programa ante cambios normativos u organizacionales.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="proceso">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="label"><span class="sec">§ 3</span>Cómo trabajamos</span>
+          <h2>Un proceso claro, con entregables concretos en cada etapa.</h2>
+        </div>
+      </div>
+      <ol class="steps">
+        <li class="step"><span class="num" aria-hidden="true">01</span><h3>Diagnóstico</h3><p>Relevamos la estructura, la actividad y los riesgos específicos de la organización.</p></li>
+        <li class="step"><span class="num" aria-hidden="true">02</span><h3>Diseño</h3><p>Elaboramos el código, las políticas y los procedimientos a medida.</p></li>
+        <li class="step"><span class="num" aria-hidden="true">03</span><h3>Implementación</h3><p>Presentamos el programa al órgano de gobierno y capacitamos a los equipos.</p></li>
+        <li class="step"><span class="num" aria-hidden="true">04</span><h3>Autonomía</h3><p>Dejamos los parámetros instalados para que la organización continúe por sí misma.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <div class="value">
+    <div class="wrap">
+      <blockquote>Un programa de integridad es <em>una ventaja</em>, no solo una obligación.</blockquote>
+      <div class="side">
+        <ul>
+          <li>Puede atenuar o eximir la responsabilidad de la persona jurídica.</li>
+          <li>Es requisito para contratar con el Estado en determinados supuestos.</li>
+          <li>Fortalece la confianza de socios, clientes y autoridades.</li>
+        </ul>
+        <a class="quiet-link" href="#contacto">Hablemos <span class="arr" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+
+  <section id="contacto">
+    <div class="wrap contact">
+      <div>
+        <span class="label"><span class="sec">§ 4</span>Contacto</span>
+        <h2>Coordinemos una primera reunión.</h2>
+        <p class="intro">Contanos sobre tu organización y te proponemos un plan de trabajo a medida.</p>
+        <div class="mail-card">
+          <span class="k">Escribinos a</span>
+          <a class="mail" href="mailto:consultoracustodia@gmail.com">consultoracustodia@gmail.com</a>
+          <button type="button" class="copy" id="copy-mail">Copiar dirección</button>
+          <span class="copied" id="copy-status" role="status"></span>
+        </div>
+      </div>
+
+      <form id="contact-form" novalidate>
+        <div class="field"><label for="f-nombre">Nombre y apellido <span class="req" aria-hidden="true">*</span></label><input id="f-nombre" name="nombre" autocomplete="name" required></div>
+        <div class="field"><label for="f-org">Organización</label><input id="f-org" name="organizacion" autocomplete="organization"></div>
+        <div class="field"><label for="f-email">Correo electrónico <span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="f-servicio">Servicio de interés</label>
+          <select id="f-servicio" name="servicio">
+            <option>Programa de Integridad</option>
+            <option>Código de Ética y políticas</option>
+            <option>Capacitación y cultura ética</option>
+            <option>Protección de datos personales</option>
+            <option>Gobernanza de Inteligencia Artificial</option>
+            <option>Diagnóstico y acompañamiento</option>
+            <option>Otro / no estoy seguro</option>
+          </select>
+        </div>
+        <div class="field full"><label for="f-msg">Mensaje</label><textarea id="f-msg" name="mensaje" rows="4"></textarea></div>
+        <div class="form-foot">
+          <small>Tus datos se usan solo para responder esta consulta, conforme a la Ley 25.326.</small>
+          <button type="submit">Enviar consulta</button>
+        </div>
+        <p class="status" id="form-status" role="status" hidden></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brandline">Custodia · Compliance &amp; Data Privacy</span>
+    <a href="mailto:consultoracustodia@gmail.com">consultoracustodia@gmail.com</a>
+    <span>© <span id="year">2026</span> Custodia. Todos los derechos reservados.</span>
+  </div>
+</footer>
+
+<script>
+/* Configuración del formulario.
+   FORM_ENDPOINT: URL de Formspree (u otro servicio) para recibir las consultas directamente en el correo.
+   Si queda vacío, el formulario abre el cliente de correo del visitante con la consulta prellenada. */
+const FORM_ENDPOINT = "";
+const CONTACT_EMAIL = "consultoracustodia@gmail.com";
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* Copiar dirección de correo */
+const copyBtn = document.getElementById("copy-mail");
+const copyStatus = document.getElementById("copy-status");
+copyBtn.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(CONTACT_EMAIL);
+    copyStatus.textContent = "Dirección copiada.";
+  } catch {
+    copyStatus.textContent = "No se pudo copiar automáticamente: " + CONTACT_EMAIL;
+  }
+  setTimeout(() => { copyStatus.textContent = ""; }, 4000);
+});
+
+/* Envío del formulario */
+const form = document.getElementById("contact-form");
+const statusEl = document.getElementById("form-status");
+const nameEl = document.getElementById("f-nombre");
+const emailEl = document.getElementById("f-email");
+function say(msg){ statusEl.textContent = msg; statusEl.hidden = false; }
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(form));
+  const nameOk = data.nombre.trim().length > 0;
+  const mailOk = /^\S+@\S+\.\S+$/.test(data.email.trim());
+  nameEl.setAttribute("aria-invalid", String(!nameOk));
+  emailEl.setAttribute("aria-invalid", String(!mailOk));
+  if (!nameOk || !mailOk) {
+    say("Completá tu nombre y un correo electrónico válido para poder responderte.");
+    (nameOk ? emailEl : nameEl).focus();
+    return;
+  }
+  if (FORM_ENDPOINT) {
+    try {
+      const r = await fetch(FORM_ENDPOINT, { method: "POST", headers: { "Accept": "application/json" }, body: new FormData(form) });
+      if (!r.ok) throw new Error();
+      form.reset();
+      say("Recibimos tu consulta. Te vamos a contactar a la brevedad.");
+    } catch {
+      say("No pudimos enviar la consulta. Escribinos directamente a " + CONTACT_EMAIL + ".");
+    }
+    return;
+  }
+  const body = `Nombre: ${data.nombre}\nOrganización: ${data.organizacion}\nCorreo: ${data.email}\nServicio: ${data.servicio}\n\n${data.mensaje}`;
+  location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Consulta: " + data.servicio)}&body=${encodeURIComponent(body)}`;
+  say("Se abrió tu correo con la consulta lista para enviar. Si no se abrió, escribinos a " + CONTACT_EMAIL + ".");
+});
+</script>
+
+</body>
+</html>
